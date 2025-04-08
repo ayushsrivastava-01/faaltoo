@@ -1,0 +1,89 @@
+/* NAVBAR CONTAINER */
+.custom-navbar {
+    background-color: #000000;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+    padding: 1rem 1.5rem;
+    transition: box-shadow 0.3s ease;
+    z-index: 1050;
+    position: sticky;
+    top: 0;
+  }
+  
+  /* SCROLL EFFECT */
+  .sticky-scrolled {
+    box-shadow: 0 6px 18px rgba(255, 215, 0, 0.5);
+  }
+  
+  /* BRAND STYLING */
+  .navbar-brand {
+    color: white !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+  }
+  
+  /* NAV LINKS */
+  .nav-link {
+    color: white !important;
+    font-size: 1.25rem;
+    margin: 0 1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+  
+  /* Underline animation */
+  .custom-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #FFD700;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+  
+  .custom-link:hover::after,
+  .custom-link:focus::after,
+  .custom-link:active::after {
+    width: 80%;
+  }
+  
+  .custom-link:hover,
+  .custom-link:focus,
+  .custom-link:active {
+    color: #FFD700 !important;
+  }
+  
+  /* TOGGLER BUTTON (hamburger) */
+  .custom-toggler {
+    border: 2px solid #FFD700;
+    border-radius: 4px;
+    padding: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFD700' viewBox='0 0 30 30'%3e%3cpath stroke='yellow' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  
+  /* MOBILE: stacked and centered nav links */
+  @media (max-width: 991px) {
+    .navbar-nav .nav-item {
+      margin: 0.5rem 0;
+    }
+    .navbar-nav {
+      align-items: center;
+    }
+  }
+  
