@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/Footer.css';
 import { FaInstagram, FaLinkedin, FaTelegram, FaGithub } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -18,29 +19,28 @@ const Footer = () => {
           <div className="footer-center">
             <h4 className="footer-heading-underline">Quick Links</h4><br />
             <div className="quick-links-boxes">
-              <a href="#home" className="quick-box">Home</a>
-              <a href="#about" className="quick-box">About</a>
-              <a href="#skills" className="quick-box">Skills</a>
-              <a href="#projects" className="quick-box">Projects</a>
-              {/* <a href="#certificates" className="quick-box">Certificates</a> */}
-              <a href="#contact" className="quick-box">Contact</a>
+              <Link to="/" className="quick-box">Home</Link>
+              <Link to="/about" className="quick-box">About</Link>
+              <Link to="/skills" className="quick-box">Skills</Link>
+              <Link to="/certificate" className="quick-box">Certificates</Link>
+              <Link to="/resume" className="quick-box">Resume</Link>
             </div>
           </div>
 
           {/* Right - Social Icons and Email */}
           <div className="footer-right">
-            <h4 className="footer-heading-underline">Connect</h4>
+            <h4 className="footer-heading-underline">Connect with Me</h4>
             <div className="social-icons">
-              <a href="https://instagram.com" target="_blank" rel="noreferrer"><FaInstagram /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-              <a href="https://telegram.me" target="_blank" rel="noreferrer"><FaTelegram /></a>
-              <a href="https://github.com" target="_blank" rel="noreferrer"><FaGithub /></a>
+              <a href="https://www.instagram.com/ayushsrivastava_01" target="_blank" rel="noreferrer"><FaInstagram /></a>
+              <a href="https://www.linkedin.com/in/ayush-srivastava01" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+              <a href="https://telegram.me/ayushsrivastava_01" target="_blank" rel="noreferrer"><FaTelegram /></a>
+              <a href="https://github.com/ayushsrivastava-01" target="_blank" rel="noreferrer"><FaGithub /></a>
             </div>
-            <p className="footer-email">Email: <a href="#">ayushsrivastava1854@gmail.com</a></p>
+            <p className="footer-email">
+              Email: <a href="mailto:ayushsrivastava1854@gmail.com" className="footer-email-link">ayushsrivastava1854@gmail.com</a>
+            </p>
           </div>
         </div>
-
-        {/* <div className="footer-line-animation"></div> */}
 
         <p className="copyright">
           © {new Date().getFullYear()} Ayush Srivastava. All rights reserved.

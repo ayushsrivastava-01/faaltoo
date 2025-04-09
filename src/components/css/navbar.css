@@ -85,5 +85,10 @@
     .navbar-nav {
       align-items: center;
     }
+         
+    .navbar-brand {
+        font-size: 1.4rem;
+      }
+    
   }
   

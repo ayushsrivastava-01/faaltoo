@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './css/Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar navbar-expand-lg custom-navbar sticky-top ${scrolled ? 'sticky-scrolled' : ''}`}>
       <div className="container">
-        <a className="navbar-brand" href="#home">Ayush's Portfolio</a>
+        <Link className="navbar-brand" to="/">Ayush's Portfolio</Link>
         <button
           className="navbar-toggler custom-toggler"
           type="button"
@@ -33,9 +34,32 @@ const Navbar = () => {
           <ul className="navbar-nav ms-auto d-flex align-items-center flex-column flex-lg-row text-center text-lg-start">
             {/* {['Home', 'About', 'Skills', 'Projects', 'Contact', 'Certificates', 'Resume'].map((item) => ( */}
               <li className="nav-item">
-                <a className="nav-link custom-link" href={`#${item.toLowerCase()}`}>kfjkagdfh</a>
+                <Link className="nav-link custom-link" to="/">Home</Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link custom-link" to="/about">About</Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link custom-link" to="/skills">Skills</Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link custom-link" to="/projects">Projects</Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link custom-link" to="/contact">Contact</Link>
               </li>
           
+              <li className="nav-item">
+                <Link className="nav-link custom-link" to="/certificate">Certificates</Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link custom-link" to="/resume">Resume</Link>
+              </li>
           </ul>
         </div>
       </div>
