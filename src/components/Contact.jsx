@@ -14,7 +14,7 @@ const Contact = () => {
       <div className={`contact-header ${animate ? "show" : ""}`}>
         <h2 className="contact-heading">Let's Connect</h2>
         <p className="contact-subheading">
-        Feel free to contact. I'm just one click away...
+          Feel free to contact. I'm just one click away...
         </p>
       </div>
 
