@@ -7,12 +7,14 @@ import C3 from '../assets/C3.png';
 import C2 from '../assets/C2.png';
 import C5 from '../assets/C5.png';
 import C4 from '../assets/C4.png';
+import C6 from '../assets/C6.png';
 
 import P1 from '/certificates/C1.pdf';
 import P2 from '/certificates/C2.pdf';
 import P3 from '/certificates/C3.pdf';
 import P4 from '/certificates/C4.pdf';
 import P5 from '/certificates/C5.pdf';
+import P6 from '/certificates/C6.pdf';
 
 const certificates = [
   { title: "Web Development Internship", image: C1, pdf: P1 },
@@ -20,6 +22,7 @@ const certificates = [
   { title: "File handling in Python", image: C2, pdf: P2 },
   { title: "Career in Tech", image: C5, pdf: P4 },
   { title: "Data Science & Machine Learning", image: C4, pdf: P5 },
+  { title: "Technical Workshop", image: C6, pdf: P6 },
 ];
 
 const Certificate = () => {
