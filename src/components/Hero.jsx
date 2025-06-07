@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './css/Hero.css';
 import heroImage from '../assets/ayush.jpg';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  const [displayText, setDisplayText] = useState('');
   const fullText =
-    "A  passionate full-stack developer who loves turning complex problems into elegant solutions. With a strong foundation in both frontend and backend technologies, I build responsive, efficient, and user-friendly web applications that make an impact.";
-
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setDisplayText((prev) => prev + fullText.charAt(i));
-      i++;
-      if (i > fullText.length) clearInterval(interval);
-    }, 40);
-    return () => clearInterval(interval);
-  }, []);
+    "A passionate full-stack developer who loves turning complex problems into elegant solutions. With a strong foundation in both frontend and backend technologies, I build responsive, efficient, and user-friendly web applications that make an impact.";
 
   return (
     <section id="home" className="hero-section">
@@ -32,7 +21,7 @@ const Hero = () => {
             <h1 className="hero-heading">
               Hi, I'm <span className="highlight">Ayush Srivastava</span>
             </h1>
-            <p className="hero-subtext">{displayText}</p>
+            <p className="hero-subtext animate-text">{fullText}</p>
             <div className="hero-buttons mt-4">
               <Link to="/contact" className="btn hero-btn me-3">
                 Contact Me

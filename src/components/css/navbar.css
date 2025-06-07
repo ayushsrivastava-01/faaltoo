@@ -1,94 +1,185 @@
 /* NAVBAR CONTAINER */
 .custom-navbar {
-    background-color: #000000;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
-    padding: 1rem 1.5rem;
-    transition: box-shadow 0.3s ease;
-    z-index: 1050;
-    position: sticky;
+  background-color: #000000;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  padding: 1rem 1.5rem;
+  transition: box-shadow 0.3s ease;
+  z-index: 1050; /* make sure it’s high */
+  position: sticky;
+  top: 0;
+}
+
+/* SCROLL EFFECT */
+.sticky-scrolled {
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.5);
+}
+
+/* BRAND STYLING */
+.navbar-brand {
+  color: white !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #FFD700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+}
+
+/* NAV LINKS */
+.nav-link {
+  color: white !important;
+  font-size: 1.25rem;
+  margin: 0 1rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.custom-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #FFD700;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.custom-link:hover::after,
+.custom-link:focus::after,
+.custom-link:active::after {
+  width: 80%;
+}
+
+.custom-link:hover,
+.custom-link:focus,
+.custom-link:active {
+  color: #FFD700 !important;
+}
+
+/* TOGGLER BUTTON */
+.custom-toggler {
+  border: 2px solid #FFD700;
+  border-radius: 4px;
+  padding: 5px 8px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  width: 36px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  transition: all 0.3s ease;
+  z-index: 1100; /* Make sure toggler is above menu */
+}
+
+.toggler-icon {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #FFD700;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* When open - transform hamburger to cross */
+.custom-toggler.open .toggler-icon:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.custom-toggler.open .toggler-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.custom-toggler.open .toggler-icon:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* RESPONSIVE NAVBAR - MOBILE */
+@media (max-width: 991px) {
+  .custom-navbar {
+    position: fixed;
+    width: 100%;
     top: 0;
+    left: 0;
   }
-  
-  /* SCROLL EFFECT */
-  .sticky-scrolled {
-    box-shadow: 0 6px 18px rgba(255, 215, 0, 0.5);
+
+  .navbar-collapse {
+    background-color: #000000;
+    padding: 1rem 0;
+    z-index: 1049;
+    box-shadow: none; /* Removed extra shadow as requested */
   }
-  
-  /* BRAND STYLING */
-  .navbar-brand {
-    color: white !important;
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+
+  .navbar-nav {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column !important;
+    width: 100%;
   }
-  
-  .navbar-brand:hover {
-    color: #FFD700;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+
+  .navbar-nav .nav-item {
+    margin: 0.7rem 0;
   }
-  
-  /* NAV LINKS */
+
+  body {
+    padding-top: 70px; /* push content below navbar when fixed */
+  }
+}
+
+/* Extra small mobile fix */
+@media (max-width: 400px) {
   .nav-link {
-    color: white !important;
-    font-size: 1.25rem;
-    margin: 0 1rem;
-    position: relative;
-    padding: 0.5rem 0;
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    margin: 0.3rem 0;
   }
-  
-  /* Underline animation */
-  .custom-link::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 2px;
-    background-color: #FFD700;
-    border-radius: 2px;
-    transition: width 0.4s ease;
+
+  .navbar-brand {
+    font-size: 1.5rem;
   }
-  
-  .custom-link:hover::after,
-  .custom-link:focus::after,
-  .custom-link:active::after {
-    width: 80%;
+}
+
+
+/* Animate collapse menu on mobile */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    will-change: opacity, transform;
+    pointer-events: none; /* disable interaction when hidden */
   }
-  
-  .custom-link:hover,
-  .custom-link:focus,
-  .custom-link:active {
-    color: #FFD700 !important;
+
+  .navbar-collapse.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* enable interaction when shown */
+    transition-delay: 0.15s; /* slight latency */
   }
-  
-  /* TOGGLER BUTTON (hamburger) */
-  .custom-toggler {
-    border: 2px solid #FFD700;
-    border-radius: 4px;
-    padding: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
   }
-  
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFD700' viewBox='0 0 30 30'%3e%3cpath stroke='yellow' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+  .navbar-collapse.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition-delay: 0.5s; /* Increased delay */
   }
-  
-  /* MOBILE: stacked and centered nav links */
-  @media (max-width: 991px) {
-    .navbar-nav .nav-item {
-      margin: 0.5rem 0;
-    }
-    .navbar-nav {
-      align-items: center;
-    }
-         
-    .navbar-brand {
-        font-size: 1.4rem;
-      }
-    
-  }
-  
+}
