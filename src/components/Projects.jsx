@@ -8,12 +8,6 @@ import {
 
 const projects = [
   {
-  title: "Grocery Shopping Webapp",
-  description: "A full-stack grocery shopping web application with user authentication, cart management, and order placement features.",
-  github: "https://github.com/ayushsrivastava-01/Grocery-Shopping-Webapp",
-  icon: <FaShoppingCart />
-},
-  {
     title: "Chat Application",
     description: "A real-time chat app using socket in Java. Command-line based.",
     github: "https://github.com/ayushsrivastava-01/chat-application",
